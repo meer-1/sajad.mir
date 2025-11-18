@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sajad Ahmad Mir | Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      scroll-behavior: smooth;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0; left: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      color: #007acc;
+      font-weight: 600;
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: #444;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #007acc;
+    }
+
+    /* Button for dark mode */
+    #themeToggle {
+      padding: 8px 16px;
+      background: #007acc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    #themeToggle:hover {
+      background: #005fa3;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 2rem 2rem;
+      max-width: 900px;
+      margin: auto;
+      animation: fadeIn 1s ease-in;
+    }
+
+    #hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+    }
+
+    #hero h2 {
+      font-size: 2.8rem;
+      color: #007acc;
+      margin-bottom: 1rem;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      max-width: 650px;
+      line-height: 1.6;
+    }
+
+    /* CARDS */
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin: 1.2rem 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.8rem;
+      background: #e1e8ef;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Dark Mode */
+    .dark {
+      background: #1a1a1a;
+      color: #e6e6e6;
+    }
+    .dark header {
+      background: rgba(30,30,30,0.9);
+      color: #e6e6e6;
+    }
+    .dark nav a {
+      color: #ddd;
+    }
+    .dark nav a:hover {
+      color: #66baff;
+    }
+    .dark .card {
+      background: #2a2a2a;
+      box-shadow: 0 4px 15px rgba(255,255,255,0.08);
+    }
+    .dark footer {
+      background: #222;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Sajad Ahmad Mir</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="themeToggle">Dark Mode</button>
+  </header>
+
+  <section id="hero">
+    <h2>Hello, I’m Sajad Ahmad Mir</h2>
+    <p>Welcome to my personal portfolio. You can reach me at
+      <strong>sajad.iitj[at]gmail.com</strong>
+    </p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I am Sajad Ahmad Mir. You can expand this section with your academic interests,
+        current research, passions, or anything you want people to know.</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <p>(Add your degrees, institution names, achievements, and timelines.)</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      <p>(List technical skills: Python, R, Machine Learning, Statistics, etc.)</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <strong>sajad(dot)iitj(at)gmail(dot)com</strong></p>
+      <p>Connect with me:
+        <a href="#">LinkedIn</a> |
+        <a href="#">YouTube</a> |
+        <a href="#">Facebook</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Sajad Ahmad Mir | Built with GitHub Pages</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("themeToggle");
+
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggle.textContent = document.body.classList.contains("dark")
+        ? "Light Mode"
+        : "Dark Mode";
+    });
+  </script>
+
+</body>
+</html>
